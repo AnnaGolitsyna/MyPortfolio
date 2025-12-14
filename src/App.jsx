@@ -1,12 +1,17 @@
 import './App.css';
+import { RouterProvider, createRouter } from '@tanstack/react-router';
+
+// Import the generated route tree
+import { routeTree } from './routeTree.gen.ts';
+
+// Create a new router instance outside the component
+const router = createRouter({
+  routeTree,
+  defaultPreload: 'intent',
+});
 
 const App = () => {
-  return (
-    <div className="content">
-      <h1>Rsbuild with React</h1>
-      <p>Start building amazing things with Rsbuild.</p>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;
