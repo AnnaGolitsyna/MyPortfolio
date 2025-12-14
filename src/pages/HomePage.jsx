@@ -16,12 +16,16 @@ function HomePage() {
           noiseAmount={0.1}
           distortion={0.05}
           className="custom-rays"
-      
         />
       </div>
 
       {/* Your content goes here */}
-      <div className="relative z-10 h-full flex items-center justify-center">
+      <div className="relative z-0 h-full flex items-center justify-center gap-8">
+        {/* <img
+          src="/images/a-young-man-typing-on-the-laptop.png"
+          alt="A young man typing on the laptop"
+          className="w-[200px] h-auto"
+        /> */}
         <h1 className="text-4xl p-8">Test Content</h1>
       </div>
     </div>
