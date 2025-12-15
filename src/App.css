@@ -53,5 +53,6 @@ body {
 #root {
   min-height: 100vh;
   background-color: #0a1628;
+  color: white;
 }
 
