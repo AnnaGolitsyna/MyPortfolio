@@ -17,7 +17,10 @@ const GooeyNav = ({
   const textRef = useRef(null);
   const [internalActiveIndex, setInternalActiveIndex] = useState(0);
 
-  const activeIndex = externalActiveIndex !== undefined ? externalActiveIndex : internalActiveIndex;
+  const activeIndex =
+    externalActiveIndex !== undefined
+      ? externalActiveIndex
+      : internalActiveIndex;
 
   const noise = (n = 1) => n / 2 - Math.random() * n;
   const getXY = (distance, pointIndex, totalPoints) => {
@@ -119,7 +122,10 @@ const GooeyNav = ({
       e.preventDefault();
       const liEl = e.currentTarget.parentElement;
       if (liEl) {
-        handleClick({ preventDefault: () => {}, currentTarget: e.currentTarget }, index);
+        handleClick(
+          { preventDefault: () => {}, currentTarget: e.currentTarget },
+          index
+        );
       }
     }
   };
@@ -148,10 +154,11 @@ const GooeyNav = ({
         {`
           :root {
             --linear-ease: linear(0, 0.068, 0.19 2.7%, 0.804 8.1%, 1.037, 1.199 13.2%, 1.245, 1.27 15.8%, 1.274, 1.272 17.4%, 1.249 19.1%, 0.996 28%, 0.949, 0.928 33.3%, 0.926, 0.933 36.8%, 1.001 45.6%, 1.013, 1.019 50.8%, 1.018 54.4%, 1 63.1%, 0.995 68%, 1.001 85%, 1);
-            --color-1: #ff6b6b;
-            --color-2: #4ecdc4;
-            --color-3: #45b7d1;
-            --color-4: #f9ca24;
+
+ --color-1: #40ffaa;
+--color-2: #00d4ff;
+--color-3: #4079ff;
+--color-4: #5bb8ff;
           }
           .effect {
             position: absolute;
