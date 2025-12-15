@@ -1,16 +1,11 @@
-import { cn } from "../../lib/utils";
-
 export default function GradientText({
   children,
   className = '',
   colors = ['#ffaa40', '#9c40ff', '#ffaa40'],
   animationSpeed = 8,
-  showBorder = false
+  showBorder = false,
 }) {
-  const gradientStyle = {
-    backgroundImage: `linear-gradient(to right, ${colors.join(', ')})`,
-    animationDuration: `${animationSpeed}s`
-  };
+  const gradientColors = colors.join(', ');
 
   return (
     <div
@@ -18,10 +13,11 @@ export default function GradientText({
     >
       {showBorder && (
         <div
-          className="absolute inset-0 bg-cover z-0 pointer-events-none animate-gradient"
+          className="absolute inset-0 bg-cover z-0 pointer-events-none"
           style={{
-            ...gradientStyle,
-            backgroundSize: '300% 100%'
+            backgroundImage: `linear-gradient(to right, ${gradientColors})`,
+            backgroundSize: '300% 100%',
+            animation: `gradient ${animationSpeed}s linear infinite`,
           }}
         >
           <div
@@ -31,18 +27,20 @@ export default function GradientText({
               height: 'calc(100% - 2px)',
               left: '50%',
               top: '50%',
-              transform: 'translate(-50%, -50%)'
+              transform: 'translate(-50%, -50%)',
             }}
           ></div>
         </div>
       )}
       <div
-        className="inline-block relative z-2 text-transparent bg-cover animate-gradient"
+        className="inline-block relative z-2 text-transparent bg-cover"
         style={{
-          ...gradientStyle,
+          backgroundImage: `linear-gradient(to right, ${gradientColors})`,
           backgroundClip: 'text',
           WebkitBackgroundClip: 'text',
-          backgroundSize: '300% 100%'
+          WebkitTextFillColor: 'transparent',
+          backgroundSize: '300% 100%',
+          animation: `gradient ${animationSpeed}s linear infinite`,
         }}
       >
         {children}
@@ -50,6 +48,3 @@ export default function GradientText({
     </div>
   );
 }
-
-
-

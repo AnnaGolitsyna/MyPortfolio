@@ -1,30 +1,57 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
+/* Tailwind v4 Theme Configuration - Use @theme directive */
+@theme {
+  /* Custom colors - these become bg-primary-cyan, text-primary-blue, etc. */
+  --color-primary-cyan: #40ffaa;
+  --color-primary-blue: #4079ff;
+  --color-primary-light: #00ffff;
+
+  --color-background-dark: #0a1628;
+  --color-background-darker: #050b14;
+
+  --color-accent-teal: #40ffaa;
+  --color-accent-blue: #4079ff;
+}
+
+/* Define gradient keyframes */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Optional: Create utility classes for different animation speeds */
+.animate-gradient {
+  animation: gradient 8s linear infinite;
+}
+
+.animate-gradient-fast {
+  animation: gradient 3s linear infinite;
+}
+
+.animate-gradient-slow {
+  animation: gradient 15s linear infinite;
+}
+
+/* Apply dark background to body and html */
+html,
 body {
+  background-color: #0a1628;
   margin: 0;
-  color: #fff;
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  background-image: linear-gradient(to bottom, #020917, #101725);
+  padding: 0;
+  height: 100%;
 }
 
-.content {
-  display: flex;
+/* Ensure root element also has dark background */
+#root {
   min-height: 100vh;
-  line-height: 1.1;
-  text-align: center;
-  flex-direction: column;
-  justify-content: center;
+  background-color: #0a1628;
 }
 
-.content h1 {
-  font-size: 3.6rem;
-  font-weight: 700;
-}
-
-.content p {
-  font-size: 1.2rem;
-  font-weight: 400;
-  opacity: 0.5;
-}
