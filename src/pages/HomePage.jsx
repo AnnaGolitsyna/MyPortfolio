@@ -1,4 +1,5 @@
 import LightRays from '../components/LightRays';
+import GradientText from '../components/ui/GradientText';
 
 function HomePage() {
   return (
@@ -21,12 +22,16 @@ function HomePage() {
 
       {/* Your content goes here */}
       <div className="relative z-0 h-full flex items-center justify-center gap-8">
-        {/* <img
-          src="/images/a-young-man-typing-on-the-laptop.png"
-          alt="A young man typing on the laptop"
-          className="w-[200px] h-auto"
-        /> */}
-        <h1 className="text-4xl p-8">Test Content</h1>
+        <h1 className="text-4xl p-8">
+          <GradientText
+            colors={['#40ffaa', '#4079ff', '#40ffaa', '#4079ff', '#40ffaa']}
+            animationSpeed={3}
+            showBorder={false}
+            className="custom-class"
+          >
+            Clean code. Clear interfaces. Real results.
+          </GradientText>
+        </h1>
       </div>
     </div>
   );
