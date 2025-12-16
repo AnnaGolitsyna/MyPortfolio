@@ -47,12 +47,13 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+ 
 }
 
-/* Ensure root element also has dark background */
 #root {
   min-height: 100vh;
   background-color: #0a1628;
   color: white;
+
 }
 

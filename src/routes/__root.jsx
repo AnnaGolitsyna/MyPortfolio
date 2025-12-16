@@ -22,7 +22,7 @@ function RootComponent() {
 
   return (
     <div className="h-screen flex flex-col overflow-hidden">
-      <main className="flex-1 overflow-auto">
+      <main className="flex-1 overflow-hidden">
         <Outlet />
       </main>
       <footer className="py-8 flex justify-center flex-shrink-0">
