@@ -4,24 +4,31 @@ import DecryptedText from '../components/ui/DecryptedText';
 import SplitText from '../components/ui/SplitText';
 import Dock from '../components/ui/DockItem';
 import { colors } from '../utils/colors';
+import { TelegramIcon } from '../components/icons/social/TelegramIcon';
+import { LinkedinIcon } from '../components/icons/social/LinkedinIcon';
+import { GmailIcon } from '../components/icons/social/GmailIcon';
 
 const items = [
-  { icon: '', label: 'Home', onClick: () => alert('Home!') },
   {
-    icon: '',
-    label: 'Archive',
+    icon: <TelegramIcon className="w-6 h-6 text-accent-blue" />,
+    label: 'Telegram',
+    onClick: () => alert('Home!'),
+  },
+  {
+    icon: <LinkedinIcon className="w-6 h-6 text-accent-blue" />,
+    label: 'Linkedin',
     onClick: () => alert('Archive!'),
   },
   {
-    icon: '',
-    label: 'Profile',
+    icon: <GmailIcon className="w-6 h-6 text-accent-blue" />,
+    label: 'Gmail',
     onClick: () => alert('Profile!'),
   },
-  {
-    icon: '',
-    label: 'Settings',
-    onClick: () => alert('Settings!'),
-  },
+  // {
+  //   icon: '',
+  //   label: 'Settings',
+  //   onClick: () => alert('Settings!'),
+  // },
 ];
 
 function HomePage() {
