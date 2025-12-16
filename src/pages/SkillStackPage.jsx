@@ -1,4 +1,4 @@
-import DomeGallery from '../components/DomeGallery';
+import DomeGallery from "../components/DomeGallery";
 
 function SkillStackPage() {
   return (
