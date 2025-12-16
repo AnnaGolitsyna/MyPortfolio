@@ -6,29 +6,29 @@ import Dock from '../components/ui/DockItem';
 import { colors } from '../utils/colors';
 import { TelegramIcon } from '../components/icons/social/TelegramIcon';
 import { LinkedinIcon } from '../components/icons/social/LinkedinIcon';
-import { GmailIcon } from '../components/icons/social/GmailIcon';
+import { GitLabIcon } from '../components/icons/social/GitLabIcon';
 
 const items = [
   {
     icon: <TelegramIcon className="w-6 h-6 text-accent-blue" />,
     label: 'Telegram',
-    onClick: () => alert('Home!'),
+    onClick: () => window.open('https://t.me/Sevatar', '_blank'),
   },
   {
     icon: <LinkedinIcon className="w-6 h-6 text-accent-blue" />,
     label: 'Linkedin',
-    onClick: () => alert('Archive!'),
+    onClick: () =>
+      window.open(
+        'https://linkedin.com/in/nikita-golitsyn-274774226',
+        '_blank'
+      ),
   },
   {
-    icon: <GmailIcon className="w-6 h-6 text-accent-blue" />,
-    label: 'Gmail',
-    onClick: () => alert('Profile!'),
+    icon: <GitLabIcon className="w-6 h-6 text-accent-blue" />,
+    label: 'GitLab',
+    onClick: () =>
+      window.open('https://gitlab.com/users/NikitaGolitsyn/projects', '_blank'),
   },
-  // {
-  //   icon: '',
-  //   label: 'Settings',
-  //   onClick: () => alert('Settings!'),
-  // },
 ];
 
 function HomePage() {
@@ -65,8 +65,8 @@ function HomePage() {
             animationSpeed={3}
             showBorder={false}
           >
-            <div className="text-xl mb-5">
-              <span>Nick Holitsyn</span>
+            <div className="text-xl m-3">
+              <span>Nik Holitsyn</span>
             </div>
           </GradientText>
 
