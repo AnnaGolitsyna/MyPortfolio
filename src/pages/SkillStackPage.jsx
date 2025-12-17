@@ -22,6 +22,7 @@ import { TanstackIcon } from '../components/icons/stack/TanstackIcon';
 import { VSCodeIcon } from '../components/icons/stack/VSCodeIcon';
 import { ClaudeIcon } from '../components/icons/stack/ClaudeIcon';
 import { RecraftIcon } from '../components/icons/stack/RecraftIcon';
+import { gradients } from '../utils/colors';
 
 const SKILLS_BY_CATEGORY = {
   'Core Technologies': [
@@ -100,7 +101,10 @@ function SkillCategory({ category, skills }) {
   return (
     <div className="mb-12 animate-fade-in">
       <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-        <span className="w-2 h-8 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full" />
+        <span
+          className="w-2 h-8 rounded-full"
+          style={{ background: gradients.primary.cyan }}
+        />
         {category}
       </h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
@@ -125,15 +129,20 @@ function SkillStackPage() {
       }}
     >
       {/* Compact View Toggle */}
-      <div className="fixed top-8 right-8 z-50">
+      <div className="fixed top-8 left-8 z-50">
         <div className="flex items-center gap-2 bg-gray-800/80 backdrop-blur-md rounded-full p-1 border border-gray-700/50 shadow-xl">
           <button
             onClick={() => setViewMode('list')}
             className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
               viewMode === 'list'
-                ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/30'
+                ? 'text-white shadow-lg'
                 : 'text-gray-400 hover:text-white'
             }`}
+            style={
+              viewMode === 'list'
+                ? { background: gradients.primary.cyan }
+                : undefined
+            }
           >
             List
           </button>
@@ -141,9 +150,14 @@ function SkillStackPage() {
             onClick={() => setViewMode('dome')}
             className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
               viewMode === 'dome'
-                ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/30'
+                ? 'text-white shadow-lg'
                 : 'text-gray-400 hover:text-white'
             }`}
+            style={
+              viewMode === 'dome'
+                ? { background: gradients.primary.cyan }
+                : undefined
+            }
           >
             3D
           </button>
@@ -188,24 +202,6 @@ function SkillStackPage() {
 
         .animate-fade-in {
           animation: fade-in 0.6s ease-out forwards;
-        }
-
-        /* Custom scrollbar for list view */
-        ::-webkit-scrollbar {
-          width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-          background: rgba(17, 24, 39, 0.5);
-        }
-
-        ::-webkit-scrollbar-thumb {
-          background: linear-gradient(180deg, #a855f7, #ec4899);
-          border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-          background: linear-gradient(180deg, #9333ea, #db2777);
         }
       `}</style>
     </div>
