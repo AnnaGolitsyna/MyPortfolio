@@ -1,41 +1,11 @@
 import { useEffect, useMemo, useRef, useCallback } from 'react';
 import { useGesture } from '@use-gesture/react';
-import {
-  SiReact,
-  SiJavascript,
-  SiPython,
-  SiDocker,
-  SiNodedotjs,
-  SiTypescript,
-  SiMongodb,
-  SiPostgresql,
-  SiGit,
-  SiGithub,
-  SiVscodium,
-  SiFigma,
-  SiTailwindcss,
-  SiNextdotjs,
-  SiExpress,
-  SiRedis,
-} from 'react-icons/si';
+import { SiReact, SiJavascript, SiTypescript } from 'react-icons/si';
 
 const DEFAULT_SKILLS = [
   { icon: SiReact, color: '#61DAFB', name: 'React' },
   { icon: SiJavascript, color: '#F7DF1E', name: 'JavaScript' },
-  { icon: SiPython, color: '#3776AB', name: 'Python' },
-  { icon: SiDocker, color: '#2496ED', name: 'Docker' },
-  { icon: SiNodedotjs, color: '#339933', name: 'Node.js' },
   { icon: SiTypescript, color: '#3178C6', name: 'TypeScript' },
-  { icon: SiMongodb, color: '#47A248', name: 'MongoDB' },
-  { icon: SiPostgresql, color: '#4169E1', name: 'PostgreSQL' },
-  { icon: SiGit, color: '#F05032', name: 'Git' },
-  { icon: SiGithub, color: '#181717', name: 'GitHub' },
-  { icon: SiVscodium, color: '#007ACC', name: 'VS Code' },
-  { icon: SiFigma, color: '#F24E1E', name: 'Figma' },
-  { icon: SiTailwindcss, color: '#06B6D4', name: 'Tailwind CSS' },
-  { icon: SiNextdotjs, color: '#000000', name: 'Next.js' },
-  { icon: SiExpress, color: '#000000', name: 'Express' },
-  { icon: SiRedis, color: '#DC382D', name: 'Redis' },
 ];
 
 const DEFAULTS = {
@@ -650,9 +620,6 @@ export default function DomeGallery({
 
     const iconName = parent.dataset.name || '';
     const iconColor = parent.dataset.color || '#ffffff';
-    const IconComponent = parent.dataset.iconIndex
-      ? items[parseInt(parent.dataset.iconIndex)].icon
-      : null;
 
     // Create icon container for enlarged view
     const iconContainer = document.createElement('div');
@@ -667,6 +634,41 @@ export default function DomeGallery({
       gap: 20px;
       background: linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(31, 41, 55, 0.95));
     `;
+
+    // Clone the icon from the original tile
+    const originalIcon = el.querySelector('svg');
+    if (originalIcon) {
+      const iconWrapper = document.createElement('div');
+      iconWrapper.style.cssText = `
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+      `;
+
+      const clonedIcon = originalIcon.cloneNode(true);
+      clonedIcon.style.width = '120px';
+      clonedIcon.style.height = '120px';
+      clonedIcon.style.color = iconColor;
+      clonedIcon.style.filter = 'none';
+
+      iconWrapper.appendChild(clonedIcon);
+      iconContainer.appendChild(iconWrapper);
+    }
+
+    // Add the skill name
+    if (iconName) {
+      const nameElement = document.createElement('div');
+      nameElement.textContent = iconName;
+      nameElement.style.cssText = `
+        font-size: 28px;
+        font-weight: 600;
+        color: white;
+        text-align: center;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      `;
+      iconContainer.appendChild(nameElement);
+    }
 
     overlay.appendChild(iconContainer);
     viewerRef.current.appendChild(overlay);
