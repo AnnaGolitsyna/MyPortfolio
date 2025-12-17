@@ -1,4 +1,4 @@
-import DomeGallery from "../components/DomeGallery";
+import DomeGallery from '../components/DomeGallery';
 import {
   SiReact,
   SiJavascript,
@@ -29,7 +29,12 @@ import {
   SiZustand,
   SiAnthropic,
 } from 'react-icons/si';
-
+import { LeafletIcon } from '../components/icons/stack/LeafletIcon';
+import { ZustandIcon } from '../components/icons/stack/ZustandIcon';
+import { TanstackIcon } from '../components/icons/stack/TanstackIcon';
+import { VSCodeIcon } from '../components/icons/stack/VSCodeIcon';
+import { ClaudeIcon } from '../components/icons/stack/ClaudeIcon';
+import { RecraftIcon } from '../components/icons/stack/RecraftIcon';
 
 const SKILLS = [
   { icon: SiReact, color: '#61DAFB', name: 'React' },
@@ -46,26 +51,12 @@ const SKILLS = [
   { icon: SiHtml5, color: '#E34F26', name: 'HTML5' },
   { icon: SiCss3, color: '#1572B6', name: 'CSS3' },
   { icon: SiSass, color: '#CC6699', name: 'Sass' },
-
-
-
- // { icon: SiAnthropic, color: '#D97757', name: 'Claude AI' },
-  // { icon: SiZustand, color: '#443E38', name: 'Zustand' },
-  // { icon: SiRspack, color: '#FFC93E', name: 'Rspack' },
- // { icon: SiVisualstudio, color: '#007ACC', name: 'VS Code' },
- // { icon: SiReactquery, color: '#FF4154', name: 'TanStack Query' },
-// leaflet
-
-
- // { icon: SiVscodium, color: '#007ACC', name: 'VS Code' },
-//   { icon: SiPython, color: '#3776AB', name: 'Python' },
-//   { icon: SiDocker, color: '#2496ED', name: 'Docker' },
-//   { icon: SiMongodb, color: '#47A248', name: 'MongoDB' },
-//   { icon: SiPostgresql, color: '#4169E1', name: 'PostgreSQL' },
-//   { icon: SiGit, color: '#F05032', name: 'Git' },
-//   { icon: SiFigma, color: '#F24E1E', name: 'Figma' },
-//   { icon: SiExpress, color: '#000000', name: 'Express' },
-//   { icon: SiRedis, color: '#DC382D', name: 'Redis' },
+  { icon: LeafletIcon, color: '#B6E464', name: 'Leaflet' },
+  { icon: ZustandIcon, color: '#443E38', name: 'Zustand' },
+  { icon: TanstackIcon, color: '#F29735', name: 'TanStack' },
+  { icon: VSCodeIcon, color: '#007ACC', name: 'VS Code' },
+  { icon: ClaudeIcon, color: '#D97757', name: 'Claude AI' },
+  { icon: RecraftIcon, color: '#FEFEFE', name: 'Recraft AI' },
 ];
 
 function SkillStackPage() {
@@ -76,11 +67,7 @@ function SkillStackPage() {
         height: '100vh',
       }}
     >
-      <DomeGallery
-        skills={SKILLS}
-        iconSize={100}
-        grayscale={false}
-      />
+      <DomeGallery skills={SKILLS} iconSize={100} grayscale={false} />
     </div>
   );
 }
