@@ -1,35 +1,7 @@
 import LightRays from '../components/LightRays';
 import GradientText from '../components/ui/GradientText';
-import DecryptedText from '../components/ui/DecryptedText';
 import SplitText from '../components/ui/SplitText';
-import Dock from '../components/ui/DockItem';
 import { colors } from '../utils/colors';
-import { TelegramIcon } from '../components/icons/social/TelegramIcon';
-import { LinkedinIcon } from '../components/icons/social/LinkedinIcon';
-import { GitLabIcon } from '../components/icons/social/GitLabIcon';
-
-const items = [
-  {
-    icon: <TelegramIcon className="w-6 h-6 text-accent-blue" />,
-    label: 'Telegram',
-    onClick: () => window.open('https://t.me/Sevatar', '_blank'),
-  },
-  {
-    icon: <LinkedinIcon className="w-6 h-6 text-accent-blue" />,
-    label: 'Linkedin',
-    onClick: () =>
-      window.open(
-        'https://linkedin.com/in/nikita-golitsyn-274774226',
-        '_blank'
-      ),
-  },
-  {
-    icon: <GitLabIcon className="w-6 h-6 text-accent-blue" />,
-    label: 'GitLab',
-    onClick: () =>
-      window.open('https://gitlab.com/users/NikitaGolitsyn/projects', '_blank'),
-  },
-];
 
 function HomePage() {
   return (
@@ -90,14 +62,6 @@ function HomePage() {
             //onLetterAnimationComplete={handleAnimationComplete}
           />
         </div>
-
-        <Dock
-          items={items}
-          panelHeight={68}
-          baseItemSize={50}
-          magnification={70}
-          position="top-right"
-        />
 
         {/* Bottom center - Tagline */}
         <div className="flex-1 flex items-end justify-center">

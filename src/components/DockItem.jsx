@@ -138,7 +138,7 @@ export default function Dock({
   return (
     <motion.div
       style={{ height, scrollbarWidth: 'none' }}
-      className="mx-2 flex max-w-full items-center"
+      className="mx-2 flex max-w-full items-start justify-start" // Changed to items-start
     >
       <motion.div
         onMouseMove={({ pageX }) => {
@@ -149,7 +149,7 @@ export default function Dock({
           isHovered.set(0);
           mouseX.set(Infinity);
         }}
-        className={`${className} ${positionClasses[position]} flex items-end w-fit gap-4 rounded-2xl  pb-2 px-4`}
+        className={`${className} ${positionClasses[position]} flex items-start w-fit gap-4 rounded-2xl pt-2 px-4`} // Changed pb-2 to pt-2 and items-end to items-start
         style={{ height: panelHeight }}
         role="toolbar"
         aria-label="Application dock"
