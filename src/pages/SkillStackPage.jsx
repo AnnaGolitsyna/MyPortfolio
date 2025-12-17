@@ -2,32 +2,18 @@ import DomeGallery from '../components/DomeGallery';
 import {
   SiReact,
   SiJavascript,
-  SiPython,
-  SiDocker,
   SiNodedotjs,
   SiTypescript,
-  SiMongodb,
-  SiPostgresql,
-  SiGit,
   SiGithub,
   SiGitlab,
-  SiVscodium,
-  SiVisualstudio,
-  SiFigma,
   SiTailwindcss,
   SiNextdotjs,
-  SiExpress,
-  SiRedis,
   SiReactrouter,
-  SiReactquery,
   SiHtml5,
   SiCss3,
   SiSass,
   SiVite,
-  SiRspack,
   SiRedux,
-  SiZustand,
-  SiAnthropic,
 } from 'react-icons/si';
 import { LeafletIcon } from '../components/icons/stack/LeafletIcon';
 import { ZustandIcon } from '../components/icons/stack/ZustandIcon';
@@ -65,8 +51,22 @@ function SkillStackPage() {
       style={{
         width: '100vw',
         height: '100vh',
+        position: 'relative',
       }}
     >
+      <div
+        style={{
+          position: 'absolute',
+          top: '32px',
+          left: '32px',
+          zIndex: 10,
+          fontSize: '24px',
+          fontWeight: 600,
+          color: 'white',
+        }}
+      >
+        on the list
+      </div>
       <DomeGallery skills={SKILLS} iconSize={100} grayscale={false} />
     </div>
   );
