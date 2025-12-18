@@ -1,7 +1,7 @@
 import LightRays from '../components/LightRays';
 import GradientText from '../components/ui/GradientText';
 import SplitText from '../components/ui/SplitText';
-import { colors } from '../utils/colors';
+import { colors, gradients } from '../utils/colors';
 
 function HomePage() {
   return (
@@ -22,10 +22,18 @@ function HomePage() {
         />
       </div>
 
+      <button
+        onClick={() => {}}
+        className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 text-white m-8 mb-0`}
+        style={{ background: gradients.primary.cyan }}
+      >
+        CV
+      </button>
+
       {/* Your content goes here */}
-      <div className="relative z-10 h-full flex flex-col">
+      <div className="relative z-10 h-full flex flex-col justify-between p-8 md:p-12 lg:p-16">
         {/* Top left - Name and title */}
-        <div className="absolute top-8 left-8">
+        <div className="flex flex-col items-center">
           <GradientText
             colors={[
               colors.primary.cyan,
@@ -37,18 +45,13 @@ function HomePage() {
             animationSpeed={3}
             showBorder={false}
           >
-            <div className="text-xl m-3">
+            <div className="text-3xl m-2">
               <span>Nik Holitsyn</span>
             </div>
           </GradientText>
 
           <SplitText
-            text={
-              <div className="flex flex-col gap-1">
-                <span>Frontend Developer</span>
-                <span>5+ Years Experience</span>
-              </div>
-            }
+            text={<span>Frontend Developer. 5+ Years Experience</span>}
             className="text-md text-center"
             delay={100}
             duration={0.6}
@@ -59,13 +62,12 @@ function HomePage() {
             threshold={0.1}
             rootMargin="-100px"
             textAlign="center"
-            //onLetterAnimationComplete={handleAnimationComplete}
           />
         </div>
 
         {/* Bottom center - Tagline */}
-        <div className="flex-1 flex items-end justify-center">
-          <h1 className="text-5xl p-8 pb-32">
+        <div className="text-center pb-8 md:pb-12">
+          <h1 className="text-5xl">
             <GradientText
               colors={[
                 colors.primary.cyan,
