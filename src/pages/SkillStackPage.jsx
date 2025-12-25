@@ -23,39 +23,146 @@ import { VSCodeIcon } from '../components/icons/stack/VSCodeIcon';
 import { ClaudeIcon } from '../components/icons/stack/ClaudeIcon';
 import { RecraftIcon } from '../components/icons/stack/RecraftIcon';
 import { gradients } from '../utils/colors';
+import { RSBuildIcon } from '../components/icons/stack/RSBuildIcon';
 
 const SKILLS_BY_CATEGORY = {
   'Core Technologies': [
-    { icon: SiJavascript, color: '#F7DF1E', name: 'JavaScript' },
-    { icon: SiTypescript, color: '#3178C6', name: 'TypeScript' },
-    { icon: SiHtml5, color: '#E34F26', name: 'HTML5' },
-    { icon: SiCss3, color: '#1572B6', name: 'CSS3' },
-    { icon: SiNodedotjs, color: '#339933', name: 'Node.js' },
+    {
+      icon: SiJavascript,
+      color: '#F7DF1E',
+      name: 'JavaScript',
+      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+    },
+    {
+      icon: SiTypescript,
+      color: '#3178C6',
+      name: 'TypeScript',
+      url: 'https://www.typescriptlang.org/',
+    },
+    {
+      icon: SiHtml5,
+      color: '#E34F26',
+      name: 'HTML5',
+      url: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
+    },
+    {
+      icon: SiCss3,
+      color: '#1572B6',
+      name: 'CSS3',
+      url: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+    },
+    {
+      icon: SiNodedotjs,
+      color: '#339933',
+      name: 'Node.js',
+      url: 'https://nodejs.org/',
+    },
   ],
   'Frameworks & Libraries': [
-    { icon: SiReact, color: '#61DAFB', name: 'React' },
-    { icon: SiNextdotjs, color: '#000000', name: 'Next.js' },
-    { icon: SiRedux, color: '#764ABC', name: 'Redux' },
-    { icon: ZustandIcon, color: '#443E38', name: 'Zustand' },
-    { icon: SiReactrouter, color: '#CA4245', name: 'React Router' },
-    { icon: TanstackIcon, color: '#F29735', name: 'TanStack' },
+    {
+      icon: SiReact,
+      color: '#61DAFB',
+      name: 'React',
+      url: 'https://react.dev/',
+    },
+    {
+      icon: SiNextdotjs,
+      color: '#000000',
+      name: 'Next.js',
+      url: 'https://nextjs.org/',
+    },
+    {
+      icon: SiRedux,
+      color: '#764ABC',
+      name: 'Redux',
+      url: 'https://redux.js.org/',
+    },
+    {
+      icon: ZustandIcon,
+      color: '#443E38',
+      name: 'Zustand',
+      url: 'https://zustand-demo.pmnd.rs/',
+    },
+    {
+      icon: SiReactrouter,
+      color: '#CA4245',
+      name: 'React Router',
+      url: 'https://reactrouter.com/',
+    },
+    {
+      icon: TanstackIcon,
+      color: '#F29735',
+      name: 'TanStack',
+      url: 'https://tanstack.com/',
+    },
   ],
   'Styling & UI': [
-    { icon: SiTailwindcss, color: '#06B6D4', name: 'Tailwind CSS' },
-    { icon: SiSass, color: '#CC6699', name: 'Sass' },
+    {
+      icon: SiTailwindcss,
+      color: '#06B6D4',
+      name: 'Tailwind CSS',
+      url: 'https://tailwindcss.com/',
+    },
+    {
+      icon: SiSass,
+      color: '#CC6699',
+      name: 'Sass',
+      url: 'https://sass-lang.com/',
+    },
   ],
   'Build Tools & Maps': [
-    { icon: SiVite, color: '#646CFF', name: 'Vite' },
-    { icon: LeafletIcon, color: '#B6E464', name: 'Leaflet' },
+    {
+      icon: SiVite,
+      color: '#646CFF',
+      name: 'Vite',
+      url: 'https://vitejs.dev/',
+    },
+    {
+      icon: RSBuildIcon,
+      color: '#AC625E',
+      name: 'RSBuild',
+      url: 'https://rsbuild.rs/',
+    },
+    {
+      icon: LeafletIcon,
+      color: '#B6E464',
+      name: 'Leaflet',
+      url: 'https://leafletjs.com/',
+    },
   ],
   'Version Control': [
-    { icon: SiGithub, color: '#181717', name: 'GitHub' },
-    { icon: SiGitlab, color: '#FC6D26', name: 'GitLab' },
+    {
+      icon: SiGithub,
+      color: '#181717',
+      name: 'GitHub',
+      url: 'https://github.com/',
+    },
+    {
+      icon: SiGitlab,
+      color: '#FC6D26',
+      name: 'GitLab',
+      url: 'https://gitlab.com/',
+    },
   ],
   'AI & Tools': [
-    { icon: VSCodeIcon, color: '#007ACC', name: 'VS Code' },
-    { icon: ClaudeIcon, color: '#D97757', name: 'Claude AI' },
-    { icon: RecraftIcon, color: '#FEFEFE', name: 'Recraft AI' },
+    {
+      icon: VSCodeIcon,
+      color: '#007ACC',
+      name: 'VS Code',
+      url: 'https://code.visualstudio.com/',
+    },
+    {
+      icon: ClaudeIcon,
+      color: '#D97757',
+      name: 'Claude AI',
+      url: 'https://claude.ai/',
+    },
+    {
+      icon: RecraftIcon,
+      color: '#FEFEFE',
+      name: 'Recraft AI',
+      url: 'https://www.recraft.ai/',
+    },
   ],
 };
 
@@ -66,10 +173,14 @@ function SkillCard({ skill, index }) {
   const IconComponent = skill.icon;
 
   return (
-    <div
+    <a
+      href={skill.url}
+      target="_blank"
+      rel="noopener noreferrer"
       className="group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm
                  rounded-2xl p-6 border border-gray-700/50 hover:border-gray-600
-                 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20"
+                 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20
+                 cursor-pointer block"
       style={{
         animationDelay: `${index * 50}ms`,
       }}
@@ -93,7 +204,7 @@ function SkillCard({ skill, index }) {
           <h3 className="text-white font-semibold text-lg">{skill.name}</h3>
         </div>
       </div>
-    </div>
+    </a>
   );
 }
 

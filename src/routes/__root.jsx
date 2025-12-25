@@ -4,7 +4,6 @@ import {
   useNavigate,
   useLocation,
 } from '@tanstack/react-router';
-import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 import GooeyNav from '../components/GooeyNav';
 import Dock from '../components/DockItem';
 import { TelegramIcon } from '../components/icons/social/TelegramIcon';
@@ -81,9 +80,7 @@ function RootComponent() {
           timeVariance={300}
           colors={[1, 2, 3, 1, 2, 3, 1, 4]}
         />
-  
       </footer>
-      <TanStackRouterDevtools />
     </div>
   );
 }

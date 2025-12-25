@@ -134,7 +134,7 @@ function AboutPage() {
               <img
                 src="/NikBgFree.png"
                 alt="Nik"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 style={{
                   filter: 'brightness(0.5) contrast(1.05)',
                   objectPosition: '70% 10%',
