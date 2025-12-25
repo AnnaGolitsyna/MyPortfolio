@@ -51,8 +51,8 @@ function HomePage() {
           </GradientText>
 
           <SplitText
-            text={<span>Frontend Developer. 5+ Years Experience</span>}
-            className="text-md text-center"
+            text={<span>Welcome to my portfolio</span>}
+            className="text-lg text-center"
             delay={100}
             duration={0.6}
             ease="power3.out"
