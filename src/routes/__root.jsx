@@ -81,6 +81,7 @@ function RootComponent() {
           timeVariance={300}
           colors={[1, 2, 3, 1, 2, 3, 1, 4]}
         />
+  
       </footer>
       <TanStackRouterDevtools />
     </div>

@@ -277,7 +277,7 @@ function AboutPage() {
                     <p>
                       What drives me? The satisfaction of transforming complex
                       requirements into elegant solutions. I'm not just someone
-                      who writes code—I'm someone who{' '}
+                      who writes code — I'm someone who{' '}
                       <span className="text-white font-semibold">
                         asks the right questions
                       </span>
@@ -289,9 +289,9 @@ function AboutPage() {
                       I thrive in direct client communication, where I can
                       clarify requirements, propose better approaches, and take
                       full ownership of technical decisions. When I see an
-                      opportunity to improve something, I don't wait to be
-                      asked—I proactively suggest solutions and take
-                      responsibility for implementing them.
+                      opportunity to improve something, I don't wait to be asked
+                      — I proactively suggest solutions and take responsibility
+                      for implementing them.
                     </p>
                   </div>
                 </div>
@@ -358,7 +358,7 @@ function AboutPage() {
                       When faced with challenges, I take full ownership. If
                       specifications have inaccuracies, I proactively suggest
                       improvements. When given the option to involve others, I
-                      assess whether I can handle it myself—and often do,
+                      assess whether I can handle it myself — and often do,
                       delivering results that exceed expectations.
                     </p>
                   </div>
@@ -372,7 +372,7 @@ function AboutPage() {
                       I write readable, scalable code that follows established
                       patterns and makes it easy for any developer to jump in
                       and understand. I believe code quality isn't just about
-                      making it work—it's about making it maintainable for the
+                      making it work — it's about making it maintainable for the
                       long term.
                     </p>
                   </div>
@@ -504,68 +504,6 @@ function AboutPage() {
             </div>
           </div>
         </section>
-
-        {/* CTA Section */}
-        <section className="relative min-h-screen bg-gradient-to-b from-background-dark to-background-darker px-8 md:px-16 py-32 flex items-center justify-center">
-          <div className="max-w-4xl mx-auto text-center space-y-12">
-            <div className="space-y-6">
-              <span className="display-font text-8xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-b from-primary-cyan/30 to-primary-cyan/5 block">
-                04
-              </span>
-
-              <h2 className="display-font text-5xl md:text-7xl font-black leading-tight">
-                Let's Build
-                <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-cyan via-primary-blue to-primary-light glow-text">
-                  Something Great
-                </span>
-              </h2>
-
-              <p className="text-xl md:text-2xl text-white/60 max-w-2xl mx-auto leading-relaxed">
-                Ready to bring your project to life with clean code and creative
-                solutions?
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
-              <a
-                href="#contact"
-                className="group relative px-10 py-5 bg-gradient-to-r from-primary-cyan to-primary-blue text-background-dark font-semibold text-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-primary-cyan/50 rounded-lg"
-              >
-                <span className="relative z-10">Get In Touch</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-blue to-primary-cyan translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-              </a>
-
-              <a
-                href="#projects"
-                className="group px-10 py-5 border-2 border-primary-cyan/30 text-white font-semibold text-lg hover:border-primary-cyan hover:bg-primary-cyan/10 transition-all duration-300 rounded-lg"
-              >
-                View My Work
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* Footer */}
-        <footer className="relative bg-background-darker px-8 md:px-16 py-12 border-t border-primary-cyan/10">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-white/40 text-sm">
-              © 2025 Nik. Crafted with passion and precision.
-            </p>
-
-            <div className="flex gap-6">
-              {['GitHub', 'LinkedIn', 'Email'].map((social) => (
-                <a
-                  key={social}
-                  href={`#${social.toLowerCase()}`}
-                  className="text-white/40 hover:text-primary-cyan transition-colors duration-300 text-sm uppercase tracking-wider"
-                >
-                  {social}
-                </a>
-              ))}
-            </div>
-          </div>
-        </footer>
       </div>
     </div>
   );
