@@ -22,13 +22,17 @@ function HomePage() {
         />
       </div>
 
-      <button
-        onClick={() => {}}
-        className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 text-white m-8 mb-0`}
+      {/* CV Download Button - Positioned absolutely */}
+      <a
+        href="/CV_NIkita_Golitsyn.pdf"
+        download="CV_Nikita_Golitsyn.pdf"
+        className="absolute top-8 left-8 z-50 inline-block px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 text-white hover:scale-105 hover:shadow-lg hover:shadow-primary-cyan/50 active:scale-95"
         style={{ background: gradients.primary.cyan }}
+        onMouseEnter={(e) => e.currentTarget.style.filter = 'brightness(1.2)'}
+        onMouseLeave={(e) => e.currentTarget.style.filter = 'brightness(1)'}
       >
-        CV
-      </button>
+        Download CV
+      </a>
 
       {/* Your content goes here */}
       <div className="relative z-10 h-full flex flex-col justify-between p-8 md:p-12 lg:p-16">
@@ -45,7 +49,6 @@ function HomePage() {
             animationSpeed={3}
             showBorder={false}
           >
-
             <h1 className="text-5xl m-2 font-bold">Nik Holitsyn</h1>
           </GradientText>
 
