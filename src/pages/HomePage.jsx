@@ -49,7 +49,7 @@ function HomePage() {
             animationSpeed={3}
             showBorder={false}
           >
-            <h1 className="text-5xl m-2 font-bold">Nik Holitsyn</h1>
+            <h1 className="text-5xl m-2 font-bold">Nik Golitsyn</h1>
           </GradientText>
 
           <SplitText
