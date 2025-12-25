@@ -45,14 +45,13 @@ function HomePage() {
             animationSpeed={3}
             showBorder={false}
           >
-            <div className="text-3xl m-2">
-              <span>Nik Holitsyn</span>
-            </div>
+
+            <h1 className="text-5xl m-2 font-bold">Nik Holitsyn</h1>
           </GradientText>
 
           <SplitText
             text={<span>Welcome to my portfolio</span>}
-            className="text-lg text-center"
+            className="text-3xl text-center"
             delay={100}
             duration={0.6}
             ease="power3.out"
@@ -66,7 +65,7 @@ function HomePage() {
         </div>
 
         {/* Bottom center - Tagline */}
-        <div className="text-center pb-8 md:pb-12">
+        <div className="text-center pb-8 md:pb-12 space-y-2">
           <h1 className="text-5xl">
             <GradientText
               colors={[
@@ -80,7 +79,39 @@ function HomePage() {
               showBorder={false}
               className="custom-class"
             >
-              Clean code. Clear interfaces. Real results.
+              Clean code.
+            </GradientText>
+          </h1>
+          <h1 className="text-7xl">
+            <GradientText
+              colors={[
+                colors.primary.cyan,
+                colors.primary.blue,
+                colors.primary.cyan,
+                colors.primary.blue,
+                colors.primary.cyan,
+              ]}
+              animationSpeed={4}
+              showBorder={false}
+              className="custom-class"
+            >
+              Clear interfaces.
+            </GradientText>
+          </h1>
+          <h1 className="text-9xl">
+            <GradientText
+              colors={[
+                colors.primary.cyan,
+                colors.primary.blue,
+                colors.primary.cyan,
+                colors.primary.blue,
+                colors.primary.cyan,
+              ]}
+              animationSpeed={5}
+              showBorder={false}
+              className="custom-class"
+            >
+              Real results.
             </GradientText>
           </h1>
         </div>
